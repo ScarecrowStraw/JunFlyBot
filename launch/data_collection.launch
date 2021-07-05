@@ -1,0 +1,7 @@
+<launch>
+
+  <arg name="TTY"   type="string"  default="/dev/ttyACM0" />
+
+  <node name="ublox_rtk" pkg="data_collection" type="ublox_rtk"/>
+  <include ns="ZED_2" file="$(find zed_wrapper)/launch/zed2.launch" /> 
+</launch>
