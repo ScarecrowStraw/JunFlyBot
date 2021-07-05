@@ -31,14 +31,14 @@ include_directories(
  ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(${PROJECT_NAME}_node src/data-collection_node.cpp
-                                   src/Print.cpp
-                                   src/SparkFun_u-blox_GNSS_Arduino_Library.cpp
-                                   src/Utils.cpp)
+# add_executable(${PROJECT_NAME}_node src/data-collection_node.cpp
+#                                    src/Print.cpp
+#                                    src/SparkFun_u-blox_GNSS_Arduino_Library.cpp
+#                                    src/Utils.cpp)
 
-target_link_libraries(${PROJECT_NAME}_node
- ${catkin_LIBRARIES}
-)
+# target_link_libraries(${PROJECT_NAME}_node
+#  ${catkin_LIBRARIES}
+# )
 
 
 
