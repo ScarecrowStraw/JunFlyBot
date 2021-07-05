@@ -19,8 +19,11 @@ int main(int argc, char** argv)
     ros::NodeHandle n;
     ros::Publisher rtk_pub = n.advertise<data_collection::rtk>("ublox_rtk", 1000);
     std::cout << "CHECK" << std::endl;
+
     std::string port;
+    int loop_rate_;
     ros::param::get("/TTY", port);
+    ros::param::get("/rate", loop_rate_);
 
     // GPS Setting
     // if(argc == 1) {
@@ -40,6 +43,7 @@ int main(int argc, char** argv)
     std::cout << check << std::endl;
 
     Stream seriComm(check);
+
     seriComm.begin(38400);
     if (!seriComm.isConnected()) {
         printf ("Ublox is not connected. Please connect ublox GNSS module and try again...\n");
@@ -52,7 +56,7 @@ int main(int argc, char** argv)
 
     int count = 0;
 
-    ros::Rate loop_rate(10);
+    ros::Rate loop_rate(loop_rate_);
     
     printf ("\n--------------------------------------------------------\n");
     while(ros::ok()) {
