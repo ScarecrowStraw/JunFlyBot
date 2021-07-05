@@ -20,7 +20,8 @@ int main(int argc, char** argv)
     ros::Publisher rtk_pub = n.advertise<data_collection::rtk>("ublox_rtk", 1000);
 
     std::string port;
-    ros::param::get("/my_string", port);
+    ros::param::get("/TTY", port);
+
     // GPS Setting
     // if(argc == 1) {
     //     printf("\nublox_f9p_test <ublox_com> <pseudo_com> (ublox_f9p_test '/dev/ttyACM0')"); 
@@ -36,6 +37,7 @@ int main(int argc, char** argv)
 
     char* check = strcpy((char*)malloc(port.length()+1), port.c_str());
     std::cout << check << std::endl;
+
     Stream seriComm(check);
     seriComm.begin(38400);
     if (!seriComm.isConnected()) {
