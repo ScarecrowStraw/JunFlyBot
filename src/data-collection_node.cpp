@@ -18,7 +18,7 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "ublox_rtk");
     ros::NodeHandle n;
     ros::Publisher rtk_pub = n.advertise<data_collection::rtk>("ublox_rtk", 1000);
-
+    std::cout << "CHECK" << std::endl;
     std::string port;
     ros::param::get("/TTY", port);
 
@@ -36,6 +36,7 @@ int main(int argc, char** argv)
     //char * check = port.c_str();
 
     char* check = strcpy((char*)malloc(port.length()+1), port.c_str());
+
     std::cout << check << std::endl;
 
     Stream seriComm(check);

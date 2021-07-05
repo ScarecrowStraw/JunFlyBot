@@ -2,6 +2,6 @@
 
   <param name="TTY"   type="string"  value="/dev/ttyACM0" />
 
-  <node name="data_collection_node" pkg="data_collection" type="data_collection_node"/>
+  <node name="data_collection_node" pkg="data_collection" type="data_collection_node" output="screen"/>
   <include ns="ZED_2" file="$(find zed_wrapper)/launch/zed2.launch" /> 
 </launch>
