@@ -52,6 +52,7 @@ int main(int argc, char** argv)
 
     myGPS.begin(seriComm);
     myGPS.setNavigationFrequency(8); //Set output to 8 times a second
+    // myGPS.setS
     myGPS.saveConfiguration(); //Save the current settings to flash and BBR
 
     int count = 0;
@@ -64,14 +65,14 @@ int main(int argc, char** argv)
             data_collection::rtk msg;
 
             std::stringstream datetime;
-            datetime << myGPS.getDay() << "/" 
-                     << myGPS.getMonth() << "/" 
-                     << myGPS.getYear() << " " 
-                     << myGPS.getHour() << ":" 
-                     << myGPS.getMinute() << ":"
-                     << myGPS.getSecond() << ":"
-                     << myGPS.getMillisecond() << ":"
-                     << myGPS.getNanosecond();
+            datetime << std::to_string(myGPS.getDay()) << "/" 
+                     << std::to_string(myGPS.getMonth()) << "/" 
+                     << std::to_string(myGPS.getYear()) << " " 
+                     << std::to_string(myGPS.getHour() + 7) << ":" 
+                     << std::to_string(myGPS.getMinute()) << ":"
+                     << std::to_string(myGPS.getSecond()) << ":"
+                     << std::to_string(myGPS.getMillisecond()) << ":"
+                     << std::to_string(myGPS.getNanosecond());
 
             msg.date_time = datetime.str();
             msg.latitude = myGPS.getLatitude() * 1e-7;
