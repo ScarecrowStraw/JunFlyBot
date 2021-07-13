@@ -2,6 +2,8 @@
 
 ## rosbag command line
 ```
-rosbag record /zed2/zed_node/left/image_rect_gray /zed2/zed_node/right/image_rect_gray /zed2/zed_node/imu/data_raw /data_collection_node/ublox_rtk -O data.bag
+rosbag record /ZED_2/zed2/zed_node/stereo/image_rect_color /ZED_2/zed2/zed_node/imu/data /ublox_rtk -O data.bag
+
+rosbag record /ZED_2/zed2/zed_node/left_raw/image_raw_color /ZED_2/zed2/zed_node/right_raw/image_raw_color /ZED_2/zed2/zed_node/imu/data_raw /ublox_rtk -O data.bag
 
 ```

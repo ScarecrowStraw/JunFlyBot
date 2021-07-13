@@ -31,6 +31,14 @@ include_directories(
  ${catkin_INCLUDE_DIRS}
 )
 
+catkin_install_python(PROGRAMS 
+  scripts/alvinxy/alvinxy.py
+  scripts/alvinxy/alvinxy_example.py
+  scripts/geonav_transform/geonav_conversions.py
+  scripts/geonav_transform/utmtest.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
 add_executable(${PROJECT_NAME}_node src/data-collection_node.cpp
                                    src/Print.cpp
                                    src/SparkFun_u-blox_GNSS_Arduino_Library.cpp
