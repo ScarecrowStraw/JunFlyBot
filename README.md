@@ -14,7 +14,7 @@ sudo apt-get -y install cuda
 
 ## Install ZED SDK (version 3.5)
 
-Download SDK from this (link)[https://www.stereolabs.com/developers/release/]
+Download SDK from this [link](https://www.stereolabs.com/developers/release/)
 
 Run:
 
