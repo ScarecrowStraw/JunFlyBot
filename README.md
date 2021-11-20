@@ -23,16 +23,32 @@ sudo chmod +x ZED...
 ./ZED...
 ```
 
+### Realsense SDK
+
+Run script in script folder (from JetsonHack)
+
+[Link](https://github.com/IntelRealSense/realsense-ros)
+
 ## Clone this repo and build
 ```
 catkin_make -DCMAKE_BUILD_TYPE=Release
 ```
 # Run
 
+
+```
+roslaunch realsense2_camera rs_t265.launch
+ roslaunch zed_wrapper zed2.launch
+roslaunch data_collection data_collection.launch
+
+```
+
 ## rosbag command line
 ```
 rosbag record /ZED_2/zed2/zed_node/stereo/image_rect_color /ZED_2/zed2/zed_node/imu/data /ublox_rtk -O data.bag
 
 rosbag record /ZED_2/zed2/zed_node/left_raw/image_raw_color /ZED_2/zed2/zed_node/right_raw/image_raw_color /ZED_2/zed2/zed_node/imu/data_raw /ublox_rtk -O data.bag
+
+rosbag record /camera/odom/sample /camera/accel/sample /camera/gyro/sample /zed2/zed_node/odom /zed2/zed_node/imu/data_raw /zed2/zed_node/left/image_rect_color /zed2/zed_node/right/image_rect_color /zed2/zed_node/depth/depth_registered /ublox_rtk -O data.bag
 
 ```
