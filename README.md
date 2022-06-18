@@ -38,7 +38,7 @@ catkin_make -DCMAKE_BUILD_TYPE=Release
 
 ```
 roslaunch realsense2_camera rs_t265.launch
- roslaunch zed_wrapper zed2.launch
+roslaunch zed_wrapper zed2.launch
 roslaunch data_collection data_collection.launch
 
 ```
